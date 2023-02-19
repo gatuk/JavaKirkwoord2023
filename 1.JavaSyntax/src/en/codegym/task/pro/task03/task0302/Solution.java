@@ -14,15 +14,11 @@ public class Solution {
         int age;
         String name;
         //Insert amount and balance from console
-        Scanner input = new Scanner (System.in);
+        Scanner input = new Scanner(System.in);
         name = input.nextLine();
         age = input.nextInt();
-        if((age >=18) && (age <=28))
-        {
+        if ((age >= 18) && (age <= 28)) {
             System.out.println(name + militaryCommissar);
-        }else{
-            return;
         }
-
     }
 }
