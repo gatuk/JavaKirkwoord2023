@@ -60,3 +60,31 @@ Random numbers within a specific range of type integer, float and double can be 
 
 
 
+<<<<<<< HEAD
+||||||| 03f8b67
+I added you as my collaborator and changed username from zico2022 to gatuk so that you don’t get confused. 
+I don’t have username PrivateCaller and I don’t why it shows it as my username when you view my GitHub account.
+=======
+I added you as my collaborator and changed username from zico2022 to gatuk so that you don’t get confused. 
+I don’t have username PrivateCaller and I don’t why it shows it as my username when you view my GitHub account.
+// chapter 1  and
+
+## week 3 and 4
+This paragraph
+this another paragraph
+// hyperlink
+// underscore
+// inline `dfdfd`
+```Java
+this is pargah
+this andor
+
+```
+// bullet list use dash or *
+// min 8 words
+
+
+// codeGym task week 3
+// if() and else 
+// conditional operator 
+>>>>>>> 80df5d2a5a625f5bc29b3f12212fb79d598fdac7
