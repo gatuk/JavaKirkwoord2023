@@ -8,15 +8,16 @@ Maximum of entered numbers
 public class Solution {
     public static void main(String[] args) {
         //write your code here
-        Scanner scanner = new Scanner(System.in);
-        int max = Integer.MIN_VALUE;
+        Scanner scanner =  new Scanner (System.in);
+        int maxEvenNumber = scanner.nextInt();
 
-        while (scanner.hasNextInt()) {
+        while (scanner.hasNextInt()){
             int number = scanner.nextInt();
-            if (number % 2 == 0 && number > max) {
-                max = number;
+            if (number %2 !=1 && number > maxEvenNumber) {
+                maxEvenNumber = number;
             }
         }
-        System.out.println(max);
+        System.out.println(maxEvenNumber);
+
     }
 }

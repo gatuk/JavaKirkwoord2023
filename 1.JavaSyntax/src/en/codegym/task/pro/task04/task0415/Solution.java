@@ -11,7 +11,10 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         int radius = scanner.nextInt();
         double PI = 3.14;
-        int area = (int) (PI * radius * radius);
-        System.out.println(area);
+        if (radius > 0) {
+            int area = (int) (PI * Math.pow(radius, 2));
+            System.out.println(area);
+        }
+
     }
 }

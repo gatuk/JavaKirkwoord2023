@@ -9,23 +9,28 @@ Second smallest number entered
 public class Solution {
     public static void main(String[] args) {
         //write your code here
-        Scanner scanner = new Scanner(System.in);
+
         int smallest = Integer.MAX_VALUE;
         int secondSmallest = Integer.MAX_VALUE;
+        int count= 0;
+        Scanner scanner = new Scanner(System.in);
 
         while (scanner.hasNextInt()) {
-            int number = scanner.nextInt();
-            if (number < smallest) {
-                secondSmallest = smallest;
-                smallest = number;
-
+            int num = scanner.nextInt();
+            if (num < smallest) {
+                smallest = num;
             }
-            if (number < secondSmallest && number > smallest) {
-                secondSmallest = number;
+            if ((num > smallest) && (num <= secondSmallest)) {
+                secondSmallest = num;
             }
-
+            count++;
         }
-        System.out.println(secondSmallest);
-
+        if (count < 2) {
+            System.out.println("error, enter at least two integers");
+        }
+        else {
+            System.out.println("second smallest = " + secondSmallest);
+        }
+        scanner.close();
     }
 }

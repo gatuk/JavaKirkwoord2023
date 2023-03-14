@@ -90,7 +90,7 @@ Then we tested the answer against the used guess. If the used guess equals answe
 ```
 if(guess.equalsIgnoreCase(answer))  break; 
 ```
-We used to compareTo method to guide to go higher or lower in their next guess if their current guess is higher or lower than randomly generated answer.
+We used compareTo method to guide to go higher or lower in their next guess if their current guess is higher or lower than randomly generated answer.
 ```  
 if(guess.compareToIgnoreCase(answer) > 0) {
     System.out.print("Guess lower: ");
@@ -114,7 +114,7 @@ for (int i = 0; i < 10; i++) {
     if (i ==5) {
         break;
     }
-    System.out.println(i);// print 0,1,2,3,4 and break out of loop when I reach 5 
+    System.out.println(i);// print 0,1,2,3,4 and break out of loop when i reach 5 
 }
 
 for (int i = 0; i < 10; i++) {
@@ -183,4 +183,102 @@ switch(season)
 The switch expression more efficient than regular switch logic. Check out this link.
 
 [This is an external link to docs.oracle.com](https://docs.oracle.com/en/java/javase/13/language/switch-expressions.html)
+
+
+## Reflection Weeks 7 and 8
+we discussed the difference between java arrays and python lists. Array is created using the following syntax 
+```
+String[] usStates= {"California", "Alabama","Alaska","Arizona","Arkansas","Colorado","Connecticut"}
+```
+Java arrays holds a fixed number of values of similar data type and accessed using indexing. For example,
+```
+System.out.println(usStates[2]); // Alaska
+System.out.println(usStates[usStates.length - 1]); // Connecticut
+```
+You can loop through arrays using regular for lop or enhanced for loop. 
+```
+for(int i = 0; i <usStates.length; i++) {
+System.out.print(usStates[i] + " ");
+}
+for(String state: usStates) {
+System.out.println(state);
+}
+```
+Array can be sorted using several sorting algorithms. In class, we covered Quicksort being an efficient one. 
+```
+Arrays.sort(usStates);
+```
+A java sort an array of Strings in Alphabetical Order. // Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut"}
+
+In class, we covered how we can generate random numbers using between two numbers eg. min and max and assign that number to randomNum. For example, 
+```
+import java.util.Arrays;
+import java.util.concurrent.ThreadLocalRandom;
+public static int randomNumber(int min, int max) {
+int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
+return randomNum;
+}
+```
+### Partner Assignment3
+In this assignment we used switch statement in conjunction with conditional (ternary) operator and 
+DateTimeFormatter. We also used try and catch to make sure valid date was entered.
+structure conditional (ternary) operator: 
+```
+condition ? exprIfTrue : exprIfFalse
+const age = 26;
+const drink = age >= 21 ? "Beer" : "Juice";
+console.log(drink); // "Beer"
+```
+The following one particular pattern of DateTimeFormatter: 
+```
+DateTimeFormatter formatter1 =
+DateTimeFormatter.ofPattern("M/d/yyyy");
+```
+Pattern of switch statement. In this example we are switching on date.getMonthValue() value. 
+``` 
+switch (date.getMonthValue()) {
+case 1:
+sign = (date.getDayOfMonth() < 20) ? ("Capricorn") : ("Aquarius");
+break;
+```
+The code below represent pattern of try and catch block. If the date inside try block is not valid, 
+the code will jump to catch block and "Invalid date" error will be displaced on the screen. 
+```
+try {
+date = LocalDate.parse(value, formatter1);
+} catch (DateTimeParseException e1) {
+System.out.println("Invalid date");
+}
+```
+In switch statement it easy to forget break statement and cause fallthrough. However, this can be prevented
+using enhanced switch statement, which is also more succinct. Partner Assignment3 can be rewritten in the following ways. 
+
+```
+String sign = null;
+date.getDayOfMonth(); 
+switch (date.getMonthValue()) { 
+case 1 -> sign = (date.getDayOfMonth() < 20) ? ("Capricorn") : ("Aquarius");
+case 2 -> sign = (date.getDayOfMonth() < 19) ? ("Aquarius") : ("Pisces");
+case 3 -> sign = (date.getDayOfMonth() < 21) ? ("Pisces") : ("Aries");
+case 4 -> sign = (date.getDayOfMonth() < 20) ? ("Aries") : ("Taurus");
+case 5 -> sign = (date.getDayOfMonth() < 20) ? ("Aries") : ("Gemini");
+case 6 -> sign = (date.getDayOfMonth() < 20) ? ("Gemini") : ("Cancer");
+case 7 -> sign = (date.getDayOfMonth() < 23) ? ("Cancer") : ("Leo");
+case 8 -> sign = (date.getDayOfMonth() < 23) ? ("Leo") : ("Virgo");
+case 9 -> sign = (date.getDayOfMonth() < 23) ? ("Virgo") : ("Libra");
+case 10 -> sign = (date.getDayOfMonth() < 23) ? ("Libra") : ("Scorpio");
+case 11 -> sign = (date.getDayOfMonth() < 22) ? ("Scorpio") : ("Sagittarius");
+case 12 -> sign = (date.getDayOfMonth() < 22) ? ("Sagittarius") : ("Capricorn");
+
+}
+```
+
+
+
+
+
+
+
+
+
 

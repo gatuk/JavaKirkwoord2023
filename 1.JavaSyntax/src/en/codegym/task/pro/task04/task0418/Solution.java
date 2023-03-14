@@ -13,7 +13,7 @@ public class Solution {
         Scanner scanner = new Scanner(System.in);
         boolean flag = scanner.nextBoolean();
         double response;
-        if (flag == true) {
+        if (flag) {
             response = Math.ceil(glass);
         }
         else {

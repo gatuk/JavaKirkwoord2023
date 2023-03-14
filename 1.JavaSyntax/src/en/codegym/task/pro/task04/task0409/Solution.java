@@ -9,15 +9,19 @@ Minimum of entered numbers
 public class Solution {
     public static void main(String[] args) {
         //write your code here
+
         Scanner scanner = new Scanner(System.in);
-        int min = Integer.MAX_VALUE;
+        System.out.println("Enter a numbers: ");
+        int minNum = scanner.nextInt();
+
         while (scanner.hasNextInt()) {
             int number = scanner.nextInt();
-            if (number < min) {
-                min = number;
+            if (number < minNum) {
+                minNum = number;
             }
         }
-        System.out.println(min);
+        System.out.println(minNum);
+
 
     }
 }

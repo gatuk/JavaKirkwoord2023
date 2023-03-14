@@ -16,10 +16,9 @@ public class Solution {
         int sum = 0;
         //write your code here
         for (int i = start; i < end; i++) {
-            if (i % multiple !=0) {
-                continue;
+            if (i % multiple == 0) {
+                sum += i;
             }
-            sum += i;
         }
         System.out.println(sum);
     }
