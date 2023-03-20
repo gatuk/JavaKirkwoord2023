@@ -6,6 +6,7 @@ public class Solution {
     public static int[][] multiArray;
 
     public static void main(String[] args) {
+        //write your code here
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         multiArray = new int[n][];
@@ -13,6 +14,8 @@ public class Solution {
             int m = scanner.nextInt();
             multiArray[i] = new int[m];
         }
-
     }
 }
+
+
+

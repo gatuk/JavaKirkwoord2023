@@ -22,6 +22,6 @@ public class Solution {
                 max = array[i];
             }
         }
-        System.out.println(max);
+        System.out.println(max);    //prints max value
     }
 }

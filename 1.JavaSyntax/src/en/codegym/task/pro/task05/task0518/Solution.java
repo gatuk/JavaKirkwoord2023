@@ -11,5 +11,6 @@ Sorting an array
             //write your code here
             Arrays.sort(array);
             System.out.println(Arrays.toString(array));
+
         }
     }

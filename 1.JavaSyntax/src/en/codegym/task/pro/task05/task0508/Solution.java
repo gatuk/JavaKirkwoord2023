@@ -18,7 +18,7 @@ public class Solution {
         }
         for (int i = 0; i < strings.length; i++) {
             for (int j = i + 1; j < strings.length; j++) {
-                if (strings[i].equals(strings[j])) {
+                if (strings[i] != null && strings[i].equals(strings[j])) {
                     strings[i] = "null";
                     strings[j] = "null";
                 }

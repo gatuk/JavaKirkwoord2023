@@ -210,7 +210,7 @@ Arrays.sort(usStates);
 ```
 A java sort an array of Strings in Alphabetical Order. // Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut"}
 
-In class, we covered how we can generate random numbers using between two numbers eg. min and max and assign that number to randomNum. For example, 
+In class, we covered how we can generate random numbers using between two numbers e.g. min and max and assign that number to randomNum. For example, 
 ```
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
@@ -219,6 +219,21 @@ int randomNum = ThreadLocalRandom.current().nextInt(min, max + 1);
 return randomNum;
 }
 ```
+// we also covered 2d array as below. 
+```
+double[][] grades = {
+{ 99.0, 85.0, 98.0, 0.0 },
+{ 98.0, 57.0, 79.0, 0.0 },
+{ 92.0, 77.0, 74.0, 0.0 }
+};
+for (int i = 0; i < grades.length; i++) {
+for (int j = 0; j < grades[i].length; j++) { 
+System.out.print(grades[i][j] + " "); 
+}
+System.out.println();
+}
+```
+
 ### Partner Assignment3
 In this assignment we used switch statement in conjunction with conditional (ternary) operator and 
 DateTimeFormatter. We also used try and catch to make sure valid date was entered.
@@ -229,12 +244,12 @@ const age = 26;
 const drink = age >= 21 ? "Beer" : "Juice";
 console.log(drink); // "Beer"
 ```
-The following one particular pattern of DateTimeFormatter: 
+The following is one specific pattern of DateTimeFormatter: 
 ```
 DateTimeFormatter formatter1 =
 DateTimeFormatter.ofPattern("M/d/yyyy");
 ```
-Pattern of switch statement. In this example we are switching on date.getMonthValue() value. 
+Pattern of switch statement : In example below, we are switching on date.getMonthValue(). 
 ``` 
 switch (date.getMonthValue()) {
 case 1:
@@ -250,8 +265,9 @@ date = LocalDate.parse(value, formatter1);
 System.out.println("Invalid date");
 }
 ```
-In switch statement it easy to forget break statement and cause fallthrough. However, this can be prevented
-using enhanced switch statement, which is also more succinct. Partner Assignment3 can be rewritten in the following ways. 
+In switch statement, it easy to forget break statement and cause fallthrough. However, this can be prevented
+using enhanced switch statement, which is also more succinct. Partner Assignment3 can be rewritten using enhanced switch statement 
+in the following manner. 
 
 ```
 String sign = null;
@@ -269,9 +285,57 @@ case 9 -> sign = (date.getDayOfMonth() < 23) ? ("Virgo") : ("Libra");
 case 10 -> sign = (date.getDayOfMonth() < 23) ? ("Libra") : ("Scorpio");
 case 11 -> sign = (date.getDayOfMonth() < 22) ? ("Scorpio") : ("Sagittarius");
 case 12 -> sign = (date.getDayOfMonth() < 22) ? ("Sagittarius") : ("Capricorn");
-
 }
 ```
+## week 7
+In this week, we covered static and non-static method. Static method belong to a class. 
+we covered the following static method.
+```
+Math.ceil(1.4) // will round off it to 2. 
+Math.floor(1.4)); will round off it to 1. 
+Math.round(1.4)); // round to 1. If a fractional part is >=.5, round up to 2 and <=.4 round down to 1.
+```
+Non-static method belongs to an object. We created instance of scanner object and 
+called a method nextDouble on scanner object(scanner). 
+```
+Scanner scanner = new Scanner(System.in);
+double num = scanner.nextDouble();
+```
+
+we also touch on Parameters and Arguments.Parameter refers to list of variables in a method declaration and 
+arguments are values that are passed in when the method is called. for example, 
+```
+public static int sum(int a, int b){ 
+     return a + b;
+} 
+int x = 10; 
+int y = 10; 
+// a and b are parameters. 
+int result = sum(x, y); // x and y are arguments 
+System.out.println("sum is : " + result);// 20
+```
+
+## Using Debugger
+we used to the debugger by placing brake point on specific line and step though the code by moving a pointer from one line to another line using step-over(F8).
+Then into for-loop or method by using (F7). Then used (F8) to walk through line of code inside for-loop or a method.
+
+we also touch on Binary Search Algorithm. Binary Search requires array to be sorted first.
+once the array is sorted, we compare the value we're looking for to the middle value in the array.
+if the value we're looking for is greater than middle value, search upper half of the array, and otherwise 
+search lower half of the array.
+```
+import static java.util.Arrays.binarySearch;
+public class BS {
+
+    public static void main(String[] args) {
+        int[] array = {2,3,6,8,9,13,20};
+        System.out.println(binarySearch(array, 20)); // 20 found at index 6
+    }
+}
+```
+
+
+
 
 
 

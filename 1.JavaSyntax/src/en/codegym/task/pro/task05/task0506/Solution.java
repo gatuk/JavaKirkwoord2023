@@ -17,7 +17,7 @@ public class Solution {
             array[i] = scanner.nextInt();
         }
         int min = Integer.MAX_VALUE;
-        for (int i = 0; i < array.length; i++) {
+        for (int i = 0; i < n; i++) {
             if (array[i] < min) {
                 min = array[i];
             }

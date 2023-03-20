@@ -17,8 +17,10 @@ public class Solution {
         // If N is even, display them in reverse order.
         int n = scanner.nextInt();
         int[] array = new int[n];
-        for (int i = 0; i < n; i++) {
-            array[i] = scanner.nextInt();
+        if (n > 0) {
+            for (int i = 0; i < n; i++) {
+                array[i] = scanner.nextInt();
+            }
         }
         if (n % 2 == 1) {
             for (int i = 0; i < array.length; i++) {
@@ -29,5 +31,6 @@ public class Solution {
                 System.out.println(array[i - 1]);
             }
         }
+
     }
 }

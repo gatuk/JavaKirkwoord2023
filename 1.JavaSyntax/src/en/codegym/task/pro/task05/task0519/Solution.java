@@ -13,9 +13,9 @@ public class Solution {
 
     public static void main(String[] args) {
         //write your code here
-        int[] copyOf = Arrays.copyOf(array, array.length);
-        Arrays.sort(copyOf);
-        if (Arrays.binarySearch(copyOf, element) >= 0) {
+        int[] array2 = Arrays.copyOf(array, array.length);
+        Arrays.sort(array2);
+        if (Arrays.binarySearch(array2, element) >= 0) {
             System.out.println(true);
         } else {
             System.out.println(false);
