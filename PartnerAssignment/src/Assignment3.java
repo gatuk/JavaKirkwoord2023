@@ -18,8 +18,10 @@ public class Assignment3 {
                 date = LocalDate.parse(value, formatter1);
             } catch (DateTimeParseException e1) {
                 System.out.println("Invalid date");
+                break;// break added
             }
             String sign = null;
+            assert date != null;
             date.getDayOfMonth();
 
             switch (date.getMonthValue()) {
@@ -67,6 +69,7 @@ public class Assignment3 {
             } else {
                 System.out.println("You are a " + sign);
             }
+            break;// brake added to avoid infinite loop
 
         }
     }
