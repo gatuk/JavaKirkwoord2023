@@ -334,6 +334,124 @@ public class BS {
 }
 ```
 
+## Reflection Weeks 9 and 10
+In week 9, we learned how to create and initialize array using the following two 
+ways:
+```
+int [] arr= new int[5]
+int array= new int []{1, 2, 3, 4, 5}
+
+//we can access each element of the array using regular for loop or foreach loop. 
+for (int i =0; i <array.length; i++) {
+System.out.println("Element at index " + i + ": "+ array[i]);
+}
+for (int element : array) { 
+system.out.println(element + " " );
+}
+```
+We learned about instance variable and methods. In the code below, I am going 
+instantiate or create instance of bank object bank1 and bank2. Then I will 
+call instance withdraw and deposit methods on bank1 and bank2 objects(eg bank1.deposit("bob", 30))
+```
+public static void main(String[] args){
+Bank bank1 = new Bank();
+Bank bank2= new bank();
+
+bank1.deposit("bob", 30);
+bank1.withdraw("bob", 30);
+
+bank2.deposit("bob", 30);
+bank2.withdraw("bob", 40);
+}
+public class Bank{
+int total =1000;
+public void  withdraw(String name, int amount){
+total= -= amount;
+System.out.println("balance after withdraw" + total)
+}
+public void  deposit(String name, int amount){
+total += amount;
+System.out.println("balance after deposit" + total)
+}
+```
+
+we also covered about access modifiers, return types parameters, arguments, method call and constructors.
+for example:
+```
+public void  withdraw(String name, int amount)
+withdraw("bob", 30);
+```
+### Understanding Java Access Modifiers
+
+A constructor is a special method that is used to initialize objects. It is called when an object of a class is created. 
+It can be used to set initial values for object attributes. 
+private: method or class member can be accessed only by code within the class itself. 
+protected: Method or class member can be accessed only by code within the class and subclass
+(package level protection).
+public: Method or class member can be accessed by any other code within our program.
+In the above withdraw method, accessor modifier is public which means can be accessed from any class. 
+
+Parameters are the variables in the definition of a method. Exist in method signature 
+and will be used in the function body. In this example, String name and int amount. Arguments are the actual values that 
+were passed to a method when we call it. 
+
+We can call withdraw("bob", 30) with arguments "bob" and 30.
+In the above example,the return type is void which means the withdrawal doesn't return anything. 
+We can display total balance after making withdraw using System.out.println("balance after withdraw " + total)
+
+Week 10, we covered chapter 4 and made clear distinction between static and nonstatic in java. 
+static belongs to the class itself. You do not need an instance in order to use a static method. 
+for example:
+```
+Math.max(50,100);
+```
+If you want to call a static method, just use the method name max on class Math(Math.max(50,100)).
+we also covered static final variable. Variable marked final means the value will never change once 
+initialized. We declare and initialize final variable in the following way.
+```
+public static final double PI = 3.14159; 
+```
+A non-static method is an instance method and belongs to each object that is generated from the class. 
+If we want to call non-static method, we use a reference variable(d) to call on non-static method (d.bark()).
+```
+Dof d = new Dog (); 
+d.bark(); 
+```
+### Short Circuit Logical Operators && and || in Java
+With &&, if the first expression is false further expression is not evaluated because anything with false always 
+return false. With ||, if the first expression is true further expression is not evaluated because anything with true always
+return true.
+
+#### Working with book class
+Here we created arraylist of type book, and used new operator which initializes arraylist of book object.
+```
+private static ArrayList<Book> books;
+books = new ArrayList<>(); 
+```
+
+### More concepts on book class and helper methods
+As segue into final project, we created Book class. Then we used constructor with no parameters and with parameters to 
+initialize instant variables. After that, we created setter and getter methods to retiree information about book instant 
+or members variables. Then we created helper class BookDAO with several template methods such as getBook, addBook, updateBook 
+and deleteBook methods manipulate data in "books.csv" file.
+
+### What you should say and What you should not say 
+The instructor spent a lot of time creating two columns layout of what to say and what not to say.
+This was done to assist student with CodeGym Levels 5 and 6 Screencast Videos. For example, 
+```
+Scanner keyboard = new Scanner(System.in); // takes an InputStream object as a parameter
+```
+Here, we are instantiating scanner object that takes an InputStream object System.in as a parameter,
+and we named the variable keyboard. Then, we can call non-static methods or member variable using keyboard object.
+
+
+
+
+
+
+
+
+  
 
 
 
