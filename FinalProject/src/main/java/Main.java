@@ -1,6 +1,7 @@
 import data.Car;
 import data.CarDAO;
 import tasks.Add;
+import tasks.Find;
 import tasks.Sort;
 import utilities.Helpers;
 
@@ -25,27 +26,26 @@ public class Main {
             choice = Helpers.getChoice(scanner,options);
             switch(choice) {
                 case 1:
-//                    Helpers.printTableHeaderRow();
-//                    for(Car car : CarDAO.getCars()) {
-//                        Helpers.printObjectAsTableRow(car);
-//                        System.out.println(car);
-//                    }
-                    Helpers.printArray(CarDAO.getCars());
+                    Helpers.printTableHeaderRow();
+                    for(Car car : CarDAO.getCars()) {
+                        Helpers.printObjectAsTableRow(car);
+                        System.out.println(car);
+                    }
+//                    Helpers.printArray(CarDAO.getCars());
                     break;
                 case 2:
                     new Sort().handleTask(scanner);
                     break;
                 case 3:
+                    new Find().handleTask(scanner);
 
                     break;
                 case 4:
                     new Add().handleTask(scanner);
                     break;
                 case 5:
-
                     break;
                 case 6:
-
                     break;
                 default:
                     break outer;

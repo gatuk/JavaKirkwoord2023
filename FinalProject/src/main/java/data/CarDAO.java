@@ -10,7 +10,7 @@ import java.util.Collections;
 import java.util.Scanner;
 
 public class CarDAO {
-    private static ArrayList<Car> cars;
+    public static ArrayList<Car> cars;
     private static final String FILE_PATH = "FinalProject/src/main/resources/";
     private static final String FILE_NAME = "car.csv";
     private static final DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
@@ -47,18 +47,12 @@ public class CarDAO {
 
     private static void writeData() {
         try(PrintWriter writer = new PrintWriter(new File(FILE_PATH + FILE_NAME))) {
-            //writer.println("title\tauthor\tpublication_date\tnum_pages\tnytimes_best_seller\tlist_price");
-            writer.println("make\tmodel\tprice\tyear\tKilometer\tseating_capacity\tsale_date\tbest_seller");
+            writer.println("Make\tModel\tPrice\tYear\tKilometer\tSeating_Capacity\tsale_date\tbest_seller");
+            //Make,Model,Price,Year,Kilometer,Seating_Capacity,sale_date,best_seller
             //Make	Model	Price	Year	Kilometer	Seating_Capacity	sale_date	best_seller
+            //writer.println("title\tauthor\tpublication_date\tnum_pages\tnytimes_best_seller\tlist_price");
             for(Car car : cars) {
-                writer.printf("%s\t" +
-                                "%s\t" +
-                                "%s\t" +
-                                "%s\t" +
-                                "%s\t" +
-                                "%s\t" +
-                                "%s\t" +
-                                "%s\n",
+                writer.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",
                         car.getMake(),
                         car.getModel(),
                         car.getPrice(),
@@ -70,6 +64,7 @@ public class CarDAO {
                 );
             }
         } catch(FileNotFoundException e) {
+            System.out.println(e.getMessage());
             
         }
     }

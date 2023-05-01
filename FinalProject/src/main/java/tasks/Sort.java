@@ -39,24 +39,24 @@ public class Sort implements TaskHandler{
                     cars.sort((a, b) -> a.getSaleDate().compareTo(b.getSaleDate()));
                     break;
                 case 4:
-//                    "Sale Date, new to old",
+//                    "Sale Date, new to old"
                     cars.sort((a, b) -> a.getSaleDate().compareTo(b.getSaleDate()) * -1);
                     break;
                 case 5:
 //                    "Price, low to high",
-                    cars.sort((a, b) -> (int) (a.getPrice()-(b.getPrice())));
+                    cars.sort((a, b) -> (int) (a.getPrice()-b.getPrice()));
                     break;
                 case 6:
 //                    "Price, high to low",
-                    cars.sort((a, b) -> (int) (a.getPrice()-(b.getPrice()) * -1));
+                    cars.sort((a, b) -> (int) (a.getPrice()-b.getPrice()) * -1);
                     break;
                 case 7:
 //                    "Kilometer Driven, low to high
-                    cars.sort((a, b) -> (int) (a.getKilometer()-(b.getKilometer())));
+                    cars.sort((a, b) -> (int) (a.getKilometer()-b.getKilometer()));
                     break;
                 case 8:
 //                    "Kilometer Driven, high to low"
-                    cars.sort((a, b) -> a.getKilometer()-(b.getKilometer()) * -1);
+                    cars.sort((a, b) -> (int) (a.getKilometer()-b.getKilometer()) * -1);
                     break;
                 default:
                     break outer;
