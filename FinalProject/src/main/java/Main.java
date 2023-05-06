@@ -29,7 +29,7 @@ public class Main {
                     Helpers.printTableHeaderRow();
                     for(Car car : CarDAO.getCars()) {
                         Helpers.printObjectAsTableRow(car);
-                        System.out.println(car);
+//                        System.out.println(car);
                     }
 //                    Helpers.printArray(CarDAO.getCars());
                     break;
@@ -44,8 +44,10 @@ public class Main {
                     new Add().handleTask(scanner);
                     break;
                 case 5:
+                    new Update().handleTask(scanner);
                     break;
                 case 6:
+                    new Remove().handleTask(scanner);
                     break;
                 default:
                     break outer;

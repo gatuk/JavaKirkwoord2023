@@ -23,6 +23,13 @@ public class Helpers {
         return dateStr;
     }
 
+    public static String printCurrency(double amt) {
+        // stack overf
+        NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        return formatter.format(amt);
+
+    }
+
     public static void pressEnterToContinue(Scanner scanner) {
         UserInput.getString(scanner, "Press enter to continue");
     }

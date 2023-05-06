@@ -86,12 +86,12 @@ public class CarDAO {
         writeData();
     }
     public static void updateCar(Car car) {
-        cars.remove(car);
+        cars.remove(car); // book dot update
         cars.add(car);
-        writeData();
+        writeData(); //update csve file
     }
     public static void deleteCar(Car car) {
-        cars.remove(car);
+        cars.remove(car); // book dot update
         writeData();
     }
 }
