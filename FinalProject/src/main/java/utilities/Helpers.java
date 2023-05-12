@@ -25,13 +25,13 @@ public class Helpers {
     }
 
     public static String printCurrency(double amt) {
-        // stack overflow help with formatting currency
+        // stack overflow-help with formatting currency
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
         return formatter.format(amt);
 
     }
     public static String printNumber(int amt) {
-        //help with formatting numbers
+        //Help with formatting numbers
         NumberFormat formatter = NumberFormat.getNumberInstance();
         return formatter.format(amt);
 

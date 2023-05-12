@@ -1,5 +1,4 @@
 package data;
-
 import java.time.LocalDate;
 
 public class Car implements Comparable<Car>,Cloneable {
@@ -12,7 +11,7 @@ public class Car implements Comparable<Car>,Cloneable {
     private int seatCapacity;
     private LocalDate saleDate;
     private boolean bestSeller;
-    //
+    // default constructor
     public Car(){
         make = "Unknown";
         model = "Unknown";
@@ -23,7 +22,7 @@ public class Car implements Comparable<Car>,Cloneable {
         saleDate = LocalDate.now();
         bestSeller = false;
     }
-
+    // parameterized constructor
     public Car(String make, String model, double price, int year, int kilometer,
                int seatCapacity, LocalDate saleDate, boolean bestSeller) {
         this.make = make;

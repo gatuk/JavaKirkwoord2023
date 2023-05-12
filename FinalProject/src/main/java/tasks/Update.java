@@ -58,8 +58,7 @@ public class Update implements TaskHandler {
                 Helpers.pressEnterToContinue(scanner);
             }
         } catch (Exception e) {
-            System.out.println("car not found to be updated.");
-//            System.out.println(e.getMessage());
+            System.out.println("Could not find car to be updated.");
         }
 
     }

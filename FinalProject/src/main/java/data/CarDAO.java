@@ -49,8 +49,6 @@ public class CarDAO {
         try(PrintWriter writer = new PrintWriter(new File(FILE_PATH + FILE_NAME))) {
             writer.println("Make\tModel\tPrice\tYear\tKilometer\tSeating_Capacity\tsale_date\tbest_seller");
             //Make,Model,Price,Year,Kilometer,Seating_Capacity,sale_date,best_seller
-            //Make	Model	Price	Year	Kilometer	Seating_Capacity	sale_date	best_seller
-            //writer.println("title\tauthor\tpublication_date\tnum_pages\tnytimes_best_seller\tlist_price");
             for(Car car : cars) {
                 writer.printf("%s\t%s\t%s\t%s\t%s\t%s\t%s\t%s\n",
                         car.getMake(),
@@ -90,12 +88,12 @@ public class CarDAO {
         writeData();
     }
     public static void updateCar(Car car) {
-        cars.remove(car); // book dot update
+        cars.remove(car); //
         cars.add(car);
         writeData(); //update csv file
     }
     public static void removeCar(Car car) {
-        cars.remove(car); // book dot update
+        cars.remove(car);//remove car
         writeData();
     }
 }

@@ -32,7 +32,7 @@ public class Remove implements TaskHandler {
                 CarDAO.writeData();
                 Helpers.pressEnterToContinue(scanner);
             } catch (Exception e) {
-                System.out.println("car not found to be removed");
+                System.out.println("Could not find car to be removed");
             }
         }
     }
