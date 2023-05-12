@@ -13,18 +13,20 @@ public class UserInput {
         value = scanner.nextLine();
         return value;
     }
-
     public static boolean getBoolean(Scanner scanner, String prompt) {
-        String value = "";
-        do {
-            System.out.print(prompt + " [Yes or No]: ");
-            value = scanner.nextLine();
-        } while (!value.equalsIgnoreCase("Yes") &&
-                !value.equalsIgnoreCase("No") &&
-                !value.equalsIgnoreCase("Y") &&
-                !value.equalsIgnoreCase("N"));
-        return value.equalsIgnoreCase("Yes") || value.equalsIgnoreCase("y");
-    }
+    String value = "";
+    do {
+        System.out.print(prompt + " [Yes, No]: ");
+        value = scanner.nextLine();
+        if (value.equals("")) break;
+
+
+    } while (!value.equalsIgnoreCase("Yes")
+            && !value.equalsIgnoreCase("No")
+            && !value.equalsIgnoreCase("Y")
+            && !value.equalsIgnoreCase("N"));
+    return value.equalsIgnoreCase("Yes") || value.equalsIgnoreCase("Y");
+}
 
     public static int getInt(Scanner scanner, String prompt) {
         return getInt(scanner, prompt, Integer.MIN_VALUE, Integer.MAX_VALUE);
@@ -60,12 +62,12 @@ public class UserInput {
     }
 
     public static LocalDate getDate(Scanner scanner, String prompt) {
+        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("M/d/yyyy");
+        DateTimeFormatter format2 = DateTimeFormatter.ofPattern("M-d-yyyy");
+        DateTimeFormatter format3 = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDate date = null;
         while (true) {
-            DateTimeFormatter format1 = DateTimeFormatter.ofPattern("M/d/yyyy");
-            DateTimeFormatter format2 = DateTimeFormatter.ofPattern("M-d-yyyy");
-            DateTimeFormatter format3 = DateTimeFormatter.ofPattern("M.d.yyyy");
-            System.out.print(prompt + " [M/D/YYYY]: ");
+            System.out.print(prompt + " [mm/dd/yyyy or yyyy-mm-dd]: ");
             String value = scanner.nextLine();
             try {
                 date = LocalDate.parse(value, format1);
@@ -80,6 +82,7 @@ public class UserInput {
                         break;
                     } catch (DateTimeParseException e3) {
                         System.out.println("Invalid date format");
+                        break;
                     }
                 }
             }
@@ -92,9 +95,11 @@ public class UserInput {
     public static double getDouble(Scanner scanner, String prompt) {
         return getDouble(scanner, prompt, Double.MIN_VALUE, Double.MAX_VALUE);
     }
+
     public static double getDouble(Scanner scanner, String prompt, double min) {
         return getDouble(scanner, prompt, min, Double.MAX_VALUE);
     }
+
     public static double getDouble(Scanner scanner, String prompt, double min, double max) {
         double value = 0;
         while (true) {

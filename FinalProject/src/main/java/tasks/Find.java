@@ -7,20 +7,19 @@ import utilities.UserInput;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-
-
 public class Find implements TaskHandler {
+
     @Override
     public void handleTask(Scanner scanner) {
-        while (true) {
+        while(true) {
             ArrayList<Car> cars = Helpers.cloneList(CarDAO.getCars());
             System.out.println("** Search **");
-            String search = UserInput.getString(scanner, "Enter a car's model [Type ~ to Exit]");
-            if (search.equals("~")) {
+            String search = UserInput.getString(scanner, "Enter the maker of a car [Type ~ to Exit]");
+            if(search.equals("~")) {
                 break;
             }
-            cars.removeIf((car -> !car.getModel().toLowerCase().contains(search.toLowerCase())));
-            if (cars.size() == 0) {
+            cars.removeIf((car -> !car.getMake().toLowerCase().contains(search.toLowerCase())));
+            if(cars.size() == 0) {
                 System.out.println("Your search matched no cars");
             } else {
                 Helpers.printTableHeaderRow();
@@ -31,5 +30,4 @@ public class Find implements TaskHandler {
             Helpers.pressEnterToContinue(scanner);
         } // end while loop
     }
-
 }

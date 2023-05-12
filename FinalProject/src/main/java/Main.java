@@ -1,8 +1,6 @@
 import data.Car;
 import data.CarDAO;
-import tasks.Add;
-import tasks.Find;
-import tasks.Sort;
+import tasks.*;
 import utilities.Helpers;
 
 import java.util.Scanner;

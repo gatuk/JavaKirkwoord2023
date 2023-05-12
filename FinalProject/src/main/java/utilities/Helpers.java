@@ -1,7 +1,7 @@
 package utilities;
 
 import data.Car;
-
+import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ public class Helpers {
         for (int i = 0; i < strs.length; i++) {
             System.out.println((i + 1) + " " + strs[i]);
         }
+        System.out.println((strs.length + 1) + " Exit");
         // Partner Assignment 5 code goes here
         return UserInput.getInt(scanner, "Choose an option 1-" + (strs.length + 1),
                 1, strs.length + 1); // return the value chosen by the user
@@ -24,8 +25,14 @@ public class Helpers {
     }
 
     public static String printCurrency(double amt) {
-        // stack overf
+        // stack overflow help with formatting currency
         NumberFormat formatter = NumberFormat.getCurrencyInstance();
+        return formatter.format(amt);
+
+    }
+    public static String printNumber(int amt) {
+        //help with formatting numbers
+        NumberFormat formatter = NumberFormat.getNumberInstance();
         return formatter.format(amt);
 
     }
@@ -39,26 +46,26 @@ public class Helpers {
          System.out.printf("%-36s\t%-18s\t%6s\t%-12s\t%6s%n",
          "Title","Publication Date","Pages","Best Seller","Price");
          */
-        System.out.printf("%-36s\t%-36s\t%-6s\t%16s\t%14s\t%20s\t%12s\t%18s%n",
-                "Make", "Model", "Price", "Year", "Kilometer", "Seating_Capacity", "sale_date", "best_seller");
+          System.out.printf("%-30s\t%-45s\t%-20s\t%-15s\t%-20s\t%-20s\t%-24s\t%-30s\n",
+                "Make",
+                "Model",
+                "Price",
+                "Year",
+                "Kilometer",
+                "Seating_Capacity",
+                "sale_date",
+                "best_seller");
 
     }
     //Make,Model,Price,Year,Kilometer,Seating_Capacity,sale_date,best_seller
 
     public static void printObjectAsTableRow(Car car) {
-        System.out.printf("%-36s\t" +
-                        "%-36s\t" +
-                        "%-6.2f\t" +
-                        "%12d\t" +
-                        "%12d\t" +
-                        "%10d\t" +
-                        "%30s\t" +
-                        "%12s%n",
+        System.out.printf("%-30s\t%-45s\t%-20s\t%-15s\t%-20s\t%-20s\t%-24s\t%-30s\n",
                 car.getMake(),
                 car.getModel(),
-                car.getPrice(),
+                printCurrency(car.getPrice()),
                 car.getYear(),
-                car.getKilometer(),
+                printNumber(car.getKilometer()),
                 car.getSeatCapacity(),
                 printDate(car.getSaleDate()),
                 car.isBestSeller() ? "Yes" : "No");

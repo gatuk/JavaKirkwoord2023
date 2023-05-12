@@ -2,7 +2,7 @@ package data;
 
 import java.time.LocalDate;
 
-public class Car implements Comparable<Car> {
+public class Car implements Comparable<Car>,Cloneable {
     //Make	Model	Price	Year	Kilometer	Seating_Capacity	sale_date	best_seller
     private String make;
     private String model;

@@ -22,7 +22,7 @@ public class CarDAO {
                 fileScanner.nextLine(); // read in the header line, but don't do anything with it
                 while (fileScanner.hasNextLine()) {
                     String line = fileScanner.nextLine();
-                    String[] data = line.split(","); // use a comma for CSV files or \t for TSV files
+                    String[] data = line.split("\t"); // use a comma for CSV files or \t for TSV files
                     // get and set all data
                     //Make	Model	Price	Year	Kilometer	Seating Capacity	sale_date	best_seller
                     Car car = new Car();
@@ -45,7 +45,7 @@ public class CarDAO {
         }
     }
 
-    private static void writeData() {
+    public static void writeData() {
         try(PrintWriter writer = new PrintWriter(new File(FILE_PATH + FILE_NAME))) {
             writer.println("Make\tModel\tPrice\tYear\tKilometer\tSeating_Capacity\tsale_date\tbest_seller");
             //Make,Model,Price,Year,Kilometer,Seating_Capacity,sale_date,best_seller
@@ -73,6 +73,10 @@ public class CarDAO {
         return cars;
     }
 
+    public static void setCars(ArrayList<Car> cars) {
+        CarDAO.cars = cars;
+    }
+
     public static Car getCar(String make) {
         for(Car car : cars) {
             if(car.getMake().toUpperCase().equals(make.toUpperCase())) {
@@ -88,9 +92,9 @@ public class CarDAO {
     public static void updateCar(Car car) {
         cars.remove(car); // book dot update
         cars.add(car);
-        writeData(); //update csve file
+        writeData(); //update csv file
     }
-    public static void deleteCar(Car car) {
+    public static void removeCar(Car car) {
         cars.remove(car); // book dot update
         writeData();
     }
